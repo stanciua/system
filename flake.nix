@@ -125,7 +125,7 @@
     mkChecks = {
       arch,
       os,
-      username ? "kclejeune",
+      username ? "stanciua",
     }: {
       "${arch}-${os}" = {
         "${username}_${os}" =
@@ -165,30 +165,25 @@
       });
 
     darwinConfigurations = {
-      "kclejeune@aarch64-darwin" = mkDarwinConfig {
-        system = "aarch64-darwin";
-        extraModules = [./profiles/personal.nix ./modules/darwin/apps.nix];
-      };
-      "kclejeune@x86_64-darwin" = mkDarwinConfig {
+      "stanciua@x86_64-darwin" = mkDarwinConfig {
         system = "x86_64-darwin";
         extraModules = [./profiles/personal.nix ./modules/darwin/apps.nix];
       };
-      "lejeukc1@aarch64-darwin" = mkDarwinConfig {
+      "stanciua@aarch64-darwin" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [./profiles/work.nix];
       };
-      "lejeukc1@x86_64-darwin" = mkDarwinConfig {
+      "stanciua@x86_64-darwin" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [./profiles/work.nix];
       };
     };
 
     nixosConfigurations = {
-      "kclejeune@x86_64-linux" = mkNixosConfig {
+      "stanciua@x86_64-linux" = mkNixosConfig {
         system = "x86_64-linux";
         hardwareModules = [
-          ./modules/hardware/phil.nix
-          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t460s
+          ./modules/hardware/stanciua.nix
         ];
         extraModules = [./profiles/personal.nix];
       };
@@ -200,8 +195,8 @@
     };
 
     homeConfigurations = {
-      "kclejeune@x86_64-linux" = mkHomeConfig {
-        username = "kclejeune";
+      "stanciua@x86_64-linux" = mkHomeConfig {
+        username = "stanciua";
         system = "x86_64-linux";
         extraModules = [./profiles/home-manager/personal.nix];
       };
@@ -210,18 +205,18 @@
       #   system = "aarch64-linux";
       #   extraModules = [./profiles/home-manager/personal.nix];
       # };
-      "kclejeune@x86_64-darwin" = mkHomeConfig {
-        username = "kclejeune";
+      "stanciua@x86_64-darwin" = mkHomeConfig {
+        username = "stanciua";
         system = "x86_64-darwin";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "kclejeune@aarch64-darwin" = mkHomeConfig {
-        username = "kclejeune";
+      "stanciua@aarch64-darwin" = mkHomeConfig {
+        username = "stanciua";
         system = "aarch64-darwin";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "lejeukc1@x86_64-linux" = mkHomeConfig {
-        username = "lejeukc1";
+      "stanciua@x86_64-linux" = mkHomeConfig {
+        username = "stanciua";
         system = "x86_64-linux";
         extraModules = [./profiles/home-manager/work.nix];
       };

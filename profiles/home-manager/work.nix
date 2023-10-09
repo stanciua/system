@@ -17,8 +17,8 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userEmail = "kennan.lejeune@jhuapl.edu";
-    userName = "Kennan LeJeune";
+    userEmail = "andrei.stanciu@aciworldwide.com";
+    userName = "Andrei Stanciu";
     extraConfig = {
       http.sslVerify = true;
       http.sslCAInfo = "/etc/ssl/certs/ca-certificates.crt";
