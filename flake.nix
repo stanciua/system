@@ -156,10 +156,6 @@
         os = "darwin";
       })
       // (mkChecks {
-        arch = "aarch64";
-        os = "linux";
-      })
-      // (mkChecks {
         arch = "x86_64";
         os = "linux";
       });
