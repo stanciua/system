@@ -211,11 +211,11 @@
         system = "aarch64-darwin";
         extraModules = [./profiles/home-manager/personal.nix];
       };
-      "stanciua@x86_64-linux" = mkHomeConfig {
-        username = "stanciua";
-        system = "x86_64-linux";
-        extraModules = [./profiles/home-manager/work.nix];
-      };
+#      "stanciua@x86_64-linux" = mkHomeConfig {
+#        username = "stanciua";
+#        system = "x86_64-linux";
+#        extraModules = [./profiles/home-manager/work.nix];
+#      };
     };
 
     devShells = eachSystemMap defaultSystems (system: let
