@@ -163,12 +163,16 @@
     darwinConfigurations = {
       "stanciua@x86_64-darwin" = mkDarwinConfig {
         system = "x86_64-darwin";
-        extraModules = [./profiles/work.nix ./profiles/personal.nix ./modules/darwin/apps.nix];
+        extraModules = [./profiles/personal.nix ./modules/darwin/apps.nix];
       };
       "stanciua@aarch64-darwin" = mkDarwinConfig {
         system = "aarch64-darwin";
         extraModules = [./profiles/work.nix];
       };
+#      "stanciua@x86_64-darwin" = mkDarwinConfig {
+#        system = "x86_64-darwin";
+#        extraModules = [./profiles/work.nix ./profiles/personal.nix ./modules/darwin/apps.nix];
+#      };
     };
 
     nixosConfigurations = {
