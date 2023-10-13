@@ -1,14 +1,14 @@
 {...}: {
   homebrew = {
     casks = [
-      "discord"
-      "dropbox"
-      "google-drive"
-      "keybase"
-      "messenger"
-      "notion"
+      # "discord"
+      # "dropbox"
+      # "google-drive"
+      # "keybase"
+      # "messenger"
+      # "notion"
       "signal"
-      "slack"
+      # "slack"
     ];
     masApps = {};
   };
