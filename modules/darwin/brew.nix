@@ -10,7 +10,7 @@
     ];
 
     taps = [
-      "1password/tap"
+      # "1password/tap"
       "beeftornado/rmtree"
       "cloudflare/cloudflare"
       "earthly/earthly"
@@ -22,23 +22,23 @@
       "teamookla/speedtest"
     ];
     casks = [
-      "1password"
-      "1password-cli"
+      # "1password"
+      # "1password-cli"
       "alt-tab"
       "appcleaner"
       "bartender"
       "docker"
-      "firefox-developer-edition"
+      # "firefox-developer-edition"
       "fork"
       # "google-chrome"
       "gpg-suite"
       # "hammerspoon"
       "hot"
       "iina"
-      "jetbrains-toolbox"
+      # "jetbrains-toolbox"
       "kitty"
       "obsidian"
-      "raycast"
+      # "raycast"
       # "rancher"
       "stats"
       "utm"

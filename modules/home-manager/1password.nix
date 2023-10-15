@@ -23,25 +23,25 @@ in {
     target = ".1password/agent.sock";
   };
   programs.bash = {
-    initExtra = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
-      if command -v op >/dev/null; then
-        source <(op completion bash)
-      fi
-    '';
+    # initExtra = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
+    #   if command -v op >/dev/null; then
+    #     source <(op completion bash)
+    #   fi
+    # '';
     shellAliases = aliases;
   };
   programs.fish = {
-    interactiveShellInit = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
-      op completion fish | source
-    '';
+    # interactiveShellInit = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
+    #   op completion fish | source
+    # '';
     shellAliases = aliases;
   };
   programs.zsh = {
-    initExtra = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
-      if command -v op >/dev/null; then
-        eval "$(op completion zsh)"; compdef _op op
-      fi
-    '';
+    # initExtra = lib.mkIf pkgs.stdenvNoCC.isDarwin ''
+    #   if command -v op >/dev/null; then
+    #     eval "$(op completion zsh)"; compdef _op op
+    #   fi
+    # '';
     shellAliases = aliases;
   };
   programs.ssh = {
