@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [kbfs keybase keybase-gui];
-  services.keybase.enable = true;
+  services.keybase.enable = false;
   services.kbfs = {
-    enable = true;
+    enable = false;
     # FIXME /keybase needs to be owned by user
     mountPoint = "/keybase";
     extraFlags = ["-label kbfs"];

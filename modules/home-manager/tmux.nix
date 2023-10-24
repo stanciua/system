@@ -145,9 +145,6 @@ in {
       # Escape turns on copy mode
       bind Escape copy-mode
 
-      # Easier reload of config
-      bind r source-file ~/.config/tmux/tmux.conf
-
       set-option -g status-position top
 
       # make Prefix p paste the buffer.
@@ -160,6 +157,42 @@ in {
       bind-key -T prefix C-l switch -t notes
       bind-key -T prefix C-d switch -t dotfiles
       bind-key e send-keys "tmux capture-pane -p -S - | nvim -c 'set buftype=nofile' +" Enter
+
+      # Import from old .tmux.conf
+      # start window index of 1
+      set-option -g base-index 1
+      setw -g pane-base-index 1
+
+      # sane scrolling
+      set-option -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+      # act like vim set-window-option -g mode-keys vi
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+      bind-key -r C-h select-window -t :-
+      bind-key -r C-l select-window -t :+
+
+      setw -g xterm-keys on
+
+      # Set window notifications
+      setw -g monitor-activity on
+      set -g visual-activity on
+
+      set-option -g display-time 1000
+
+      # Reload source file
+      bind-key r source-file ~/.tmux.conf \; display-message "Configuration reloaded"
+
+      # Sync panes
+      bind-key C-w setw synchronize-panes \; run-shell 'tmux display-message "Set option: synchronize-panes -> $(tmux showw -v synchronize-panes)"'
+
+      bind C-k send-keys 'C-l'\; clear-history
+
+      bind-key / display-panes \; select-pane -t :.
+
+
     '';
   };
 }
